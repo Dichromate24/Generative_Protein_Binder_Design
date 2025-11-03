@@ -19,7 +19,6 @@ def AF2_NIM(API_KEY, sequence):
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
         "Accept": "application/json",
-        #"NVCF-POLL-SECONDS": "600"
     }
 
     AF2_payload = {
@@ -155,7 +154,6 @@ def RFD_NIM(API_KEY, sequence):
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
         "Accept": "application/json",
-        #"NVCF-POLL-SECONDS": "600"
     }
 
     RFD_payload = {
@@ -181,7 +179,6 @@ def PMPNN_NIM(API_KEY, sequence):
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
         "Accept": "application/json",
-        #"NVCF-POLL-SECONDS": "600"
     }
 
     PMPNN_payload = {
@@ -211,7 +208,6 @@ def MULTIMER_NIM(API_KEY, binder_pair):
         "Authorization": f"Bearer {API_KEY}",
         "Content-Type": "application/json",
         "Accept": "application/json",
-        #"NVCF-POLL-SECONDS": "600"
     }
 
     MULTIMER_payload = {
@@ -292,7 +288,7 @@ def visualize_pdb_py3dmol(pdb_text: str, width: int = 800, height: int = 600, sp
     view = py3Dmol.view(width=width, height=height)
     view.addModel(pdb_text, 'pdb')
 
-    view.setStyle({'cartoon': {'color': 'spectrum'}})  # try 'chain' or 'ss' too
+    view.setStyle({'cartoon': {'color': 'spectrum'}})  # can change to 'chain' or 'ss' too
 
     view.zoomTo()
     if spin:
@@ -344,25 +340,19 @@ def main():
     print("***************************************************************")
     print("\n\n")
 
-    #API_KEY = input("Please enter your API_KEY: ")
-    #API_KEY = "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"
-
+    # Example Inputs:
+    
     # "Insulin B-chain (30 AA)": "FVNQHLCGSHLVEALYLVCGERGFFYTPKT"
-    #example_input = "FVNQHLCGSHLVEALYLVCGERGFFYTPKT"
-    #protein_name = "Insulin_B_chain"
+    # example_input = "FVNQHLCGSHLVEALYLVCGERGFFYTPKT"
+    #mprotein_name = "Insulin_B_chain"
 
     # ACE2 Receptor
-    #example_input="STIEEQAKTFLDKFNHEAEDLFYQSSLASWNYNTNITEENVQNMNNAGDKWSAFLKEQSTLAQMYPLQEIQNLTVKLQLQALQQNGSSVLSEDKSKRLNTILNTMSTIYSTGKVCNPDNPQECLLLEPGLNEIMANSLDYNERLWAWESWRSEVGKQLRPLYEEYVVLKNEMARANHYEDYGDYWRGDYEVNGVDGYDYSRGQLIEDVEHTFEEIKPLYEHLHAYVRAKLMNAYPSYISPIGCLPAHLLGDMWGRFWTNLYSLTVPFGQKPNIDVTDAMVDQAWDAQRIFKEAEKFFVSVGLPNMTQGFWENSMLTDPGNVQKAVCHPTAWDLGKGDFRILMCTKVTMDDFLTAHHEMGHIQYDMAYAAQPFLLRNGANEGFHEAVGEIMSLSAATPKHLKSIGLLSPDFQEDNETEINFLLKQALTIVGTLPFTYMLEKWRWMVFKGEIPKDQWMKKWWEMKREIVGVVEPVPHDETYCDPASLFHVSNDYSFIRYYTRTLYQFQFQEALCQAAKHEGPLHKCDISNSTEAGQKLFNMLRLGKSEPWTLALENVVGAKNMNVRPLLNYFEPLFTWLKDQNKNSFVGWSTDWSPYAD"
-    #protein_name = "ACE2_Receptor"
+    # example_input="STIEEQAKTFLDKFNHEAEDLFYQSSLASWNYNTNITEENVQNMNNAGDKWSAFLKEQSTLAQMYPLQEIQNLTVKLQLQALQQNGSSVLSEDKSKRLNTILNTMSTIYSTGKVCNPDNPQECLLLEPGLNEIMANSLDYNERLWAWESWRSEVGKQLRPLYEEYVVLKNEMARANHYEDYGDYWRGDYEVNGVDGYDYSRGQLIEDVEHTFEEIKPLYEHLHAYVRAKLMNAYPSYISPIGCLPAHLLGDMWGRFWTNLYSLTVPFGQKPNIDVTDAMVDQAWDAQRIFKEAEKFFVSVGLPNMTQGFWENSMLTDPGNVQKAVCHPTAWDLGKGDFRILMCTKVTMDDFLTAHHEMGHIQYDMAYAAQPFLLRNGANEGFHEAVGEIMSLSAATPKHLKSIGLLSPDFQEDNETEINFLLKQALTIVGTLPFTYMLEKWRWMVFKGEIPKDQWMKKWWEMKREIVGVVEPVPHDETYCDPASLFHVSNDYSFIRYYTRTLYQFQFQEALCQAAKHEGPLHKCDISNSTEAGQKLFNMLRLGKSEPWTLALENVVGAKNMNVRPLLNYFEPLFTWLKDQNKNSFVGWSTDWSPYAD"
+    # protein_name = "ACE2_Receptor"
 
     # 5tpn
-    #example_input = "NITEEFYQSTCSAVSKGYLSALRTGWYTSVITIELSNIKKIKCNGTDAKIKLIKQELDKYKNAVTELQLLMQSTPATNNQARGSGSGRSLGFLLGVGSAIASGVAVSKVLHLEGEVNKIKSALLSTNKAVVSLSNGVSVLTSKVLDLKNYIDKQLLPIVNKQSCSIPNIETVIEFQQKNNRLLEITREFSVNAGVTTPVSTYMLTNSELLSLINDMPITNDQKKLMSNNVQIVRQQSYSIMSIIKEEVLAYVVQLPLYGVIDTPCWKLHTSPLCTTNTKEGSNICLTRTDRGWYCDNAGSVSFFPQAETCKVQSNRVFCDTMNSLTLPSEVNLCNVDIFNPKYDCKIMTSKTDVSSSVITSLGAIVSCYGKTKCTASNKNRGIIKTFSNGCDYVSNKGVDTVSVGNTLYYVNKQEGKSLYVKGEPIINFYDPLVFPSDQFDASISQVNEKINQSLAFIRKSDELLSAIGGYIPEAPRDGQAYVRKDGEWVLLSTFLGGLVPRGSHHHHHH"
-    #protein_name = "5tpn"
-    '''
-
-    NITEEFYQSTCSAVSKGYLSALRTGWYTSVITIELSNIKKIKCNGTDAKIKLIKQELDKYKNAVTELQLLMQSTPATNNQARGSGSGRSLGFLLGVGSAIASGVAVSKVLHLEGEVNKIKSALLSTNKAVVSLSNGVSVLTSKVLDLKNYIDKQLLPIVNKQSCSIPNIETVIEFQQKNNRLLEITREFSVNAGVTTPVSTYMLTNSELLSLINDMPITNDQKKLMSNNVQIVRQQSYSIMSIIKEEVLAYVVQLPLYGVIDTPCWKLHTSPLCTTNTKEGSNICLTRTDRGWYCDNAGSVSFFPQAETCKVQSNRVFCDTMNSLTLPSEVNLCNVDIFNPKYDCKIMTSKTDVSSSVITSLGAIVSCYGKTKCTASNKNRGIIKTFSNGCDYVSNKGVDTVSVGNTLYYVNKQEGKSLYVKGEPIINFYDPLVFPSDQFDASISQVNEKINQSLAFIRKSDELLSAIGGYIPEAPRDGQAYVRKDGEWVLLSTFLGGLVPRGSHHHHHH
-    
-    '''
+    # example_input = "NITEEFYQSTCSAVSKGYLSALRTGWYTSVITIELSNIKKIKCNGTDAKIKLIKQELDKYKNAVTELQLLMQSTPATNNQARGSGSGRSLGFLLGVGSAIASGVAVSKVLHLEGEVNKIKSALLSTNKAVVSLSNGVSVLTSKVLDLKNYIDKQLLPIVNKQSCSIPNIETVIEFQQKNNRLLEITREFSVNAGVTTPVSTYMLTNSELLSLINDMPITNDQKKLMSNNVQIVRQQSYSIMSIIKEEVLAYVVQLPLYGVIDTPCWKLHTSPLCTTNTKEGSNICLTRTDRGWYCDNAGSVSFFPQAETCKVQSNRVFCDTMNSLTLPSEVNLCNVDIFNPKYDCKIMTSKTDVSSSVITSLGAIVSCYGKTKCTASNKNRGIIKTFSNGCDYVSNKGVDTVSVGNTLYYVNKQEGKSLYVKGEPIINFYDPLVFPSDQFDASISQVNEKINQSLAFIRKSDELLSAIGGYIPEAPRDGQAYVRKDGEWVLLSTFLGGLVPRGSHHHHHH"
+    # protein_name = "5tpn"
 
     API_KEY = input("Please enter your API_KEY: ").strip()
     example_input = input("Please enter your protein sequence: ").strip()
@@ -379,13 +369,13 @@ def main():
         AF2_result = AF2_NIM(API_KEY, example_input)
         
         # unpack AF2 results
-        # result in list of 5 predicted structure, so concatenate with newlines
+        # result in list of 5 predicted structure
         all_pdb_text = "\n".join(x for x in AF2_result if isinstance(x, str))
         first_pdb = AF2_result[0]   
         
         # save all 5 AF2 results into pdb file
         (output_dir / f"{protein_name}_all_AF2_structures.pdb").write_text(all_pdb_text, encoding="utf-8")
-        # save first AF2 result
+        # save first AF2 result for subsequent use
         (output_dir / f"{protein_name}_first_structure.pdb").write_text(first_pdb, encoding="utf-8")
 
         # visualise AF2 results
@@ -456,9 +446,6 @@ def main():
 
     filename = f"{protein_name}_RFD_prediction.pdb"
     (output_dir/filename).write_text(RFD_response, encoding="utf-8")
-    # path = os.path.join(output_dir, filename)
-    # with open(path, "w", encoding="utf-8") as f:
-    #     f.write(RFD_response)
 
     # visualise RFD results
     html_path = visualize_pdb_py3dmol(RFD_response)
@@ -477,16 +464,11 @@ def main():
 
     filename = f"{protein_name}_Protein_MPNN_prediction.fa"
     (output_dir/filename).write_text(PMPNN_response, encoding="utf-8")
-    # path = os.path.join(output_dir, filename)
-    # with open(path, "w", encoding="utf-8") as f:
-    #     f.write(PMPNN_response)
-
+    
     # --------------------  RUN AF-MULTIMER -------------------
     print("Running ALPHAFOLD-MULTIMER...")
 
-    # ADD read PMPNN_response from text file to get fasta_sequences
-
-    # obtain predicted sequences, note: need to skip first 2 lines
+    # obtain predicted sequences (note: need to skip first 2 lines which is the input sequence)
     fasta_sequences = [x.strip() for x in PMPNN_response.split("\n") if '>' not in x][2:]
     # create a list of pairs of [possible_binder_seq, target_seq]
     binder_target_pairs = [[binder, example_input] for binder in fasta_sequences]
@@ -541,10 +523,6 @@ def main():
 
         filename = f"{protein_name}_pdb_{i+1}_MULTIMER.pdb"
         (output_dir/filename).write_text(res, encoding="utf-8")
-        
-        # path = os.path.join(output_dir, filename)
-        # with open(path, "w", encoding="utf-8") as f:
-        #     f.write(res)
 
         html_path = visualize_pdb_py3dmol(res)
         print("Opened viewer for MULTIMER:", html_path)
@@ -569,13 +547,6 @@ def main():
         
 
         
-
-
-
-
-
-
-
 
 
 
