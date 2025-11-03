@@ -1,6 +1,6 @@
 🧬 Generative Protein Binder Design Pipeline
 
-This repository contains an end-to-end Python workflow for AI-assisted protein binder design using NVIDIA BioNeMo cloud models. The pipeline integrates multiple neural inference microservices (NIMs) — AlphaFold2, OpenFold3, ESMFold, RFdiffusion, ProteinMPNN, and AlphaFold-Multimer — to predict, design, and evaluate protein–protein interactions.
+This repository contains an end-to-end Python workflow for AI-assisted protein binder design using NVIDIA BioNeMo cloud models. The pipeline integrates multiple NVIDIA inference microservices (NIMs) — AlphaFold2, OpenFold3, ESMFold, RFdiffusion, ProteinMPNN, and AlphaFold-Multimer — to predict, design, and evaluate protein–protein interactions.
 
 
 The workflow starts from a user-provided amino acid sequence (target protein):
